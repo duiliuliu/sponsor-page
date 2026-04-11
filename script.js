@@ -5,8 +5,8 @@ const MainBox = bd.querySelector("#MainBox");
 const donateBox = bd.querySelector("#donateBox");
 
 const qqr = "images/QQPayQR.png";
-const aqr = "images/AliPayQR.png";
-const wqr = "images/WeChatQR.png";
+const aqr = "images/AliPayQR.jpg";
+const wqr = "images/WeChatQR.jpg";
 
 const showQR = (QR) => {
   if (QR) MainBox.style.backgroundImage = `url(${QR})`;
