@@ -121,13 +121,9 @@ a {
 }
 
 #donateBox>#QQPay {
-  background-image: url(https://storage.ko-fi.com/cdn/kofi6.png?v=6);
-  line-height: 28px;
+  background-image: url(https://storage.ko-fi.com/cdn/logomarkLogo.png);
 }
 
-#donateBox>#QQPay:hover {
-  overflow: visible;
-}
 
 #donateBox #AliPay {
   background-image: url(images/AliPay.svg);
