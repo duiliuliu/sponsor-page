@@ -72,16 +72,17 @@ a {
 }
 
 #donateBox {
-  left: calc(50% - 150px);
+  left: calc(50% - 111px); /* 容器居中：222px / 2 */
   top: calc(50% - 15px);
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
-  width: 299px;
+  width: 222px; /* 74 × 3 */
   height: 28px;
   float: left;
   z-index: 1;
 }
+
 
 #donateBox li {
   width: 74px;
