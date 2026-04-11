@@ -19,7 +19,7 @@ const showQR = (QR) => {
 donateBox.addEventListener("click", (e) => {
   let el = e.target;
 
-  if (el.id === "QQPay22222") showQR(qqr);
+  if (el.id === "QQPay") window.open("https://ko-fi.com/E1E81XKC5D", "_blank");
   else if (el.id === "AliPay") showQR(aqr);
   else if (el.id === "WeChat") showQR(wqr);
 });
