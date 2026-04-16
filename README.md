@@ -61,4 +61,39 @@
 **推荐最小尺寸**：
 - 常规模式：宽度 300px+，高度 60px+
 - 小屏幕模式：宽度 200px+，高度 50px+
-- 图标模式：宽度 60px，高度 240px+
+- 图标模式：宽度 60px，高度 200px+
+
+### 三种模式设置示例
+
+#### 1. 常规模式（默认）
+适合标准宽度的页面，显示完整图标和文字
+```html
+<iframe
+  src="https://duiliuliu.github.io/sponsor-page/"
+  style="border:0 none #fff; min-height:60px; width:300px;"
+  frameborder="0"
+  scrolling="no"
+></iframe>
+```
+
+#### 2. 小屏幕模式
+适合中等宽度的页面，图标和文字会自动调整大小
+```html
+<iframe
+  src="https://duiliuliu.github.io/sponsor-page/"
+  style="border:0 none #fff; min-height:50px; width:220px;"
+  frameborder="0"
+  scrolling="no"
+></iframe>
+```
+
+#### 3. 图标模式
+适合窄宽度的页面，只显示图标，垂直堆叠排列
+```html
+<iframe
+  src="https://duiliuliu.github.io/sponsor-page/"
+  style="border:0 none #fff; min-height:200px; width:80px;"
+  frameborder="0"
+  scrolling="no"
+></iframe>
+```

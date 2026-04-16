@@ -335,20 +335,20 @@ a {
     flex-direction: column;
     min-width: auto;
     width: 100%;
-    max-width: 80px;
+    max-width: 70px;
     height: auto;
-    padding: 5px 0;
+    padding: 2px 0;
     margin: 0 auto;
   }
   
   #donateBox li {
     width: 100%;
-    min-width: 48px;
-    height: 48px;
+    min-width: 44px;
+    height: 44px;
     border-left: none;
     border-top: 1px solid #ddd;
-    background-size: 32px;
-    margin: 2px 0;
+    background-size: 28px;
+    margin: 1px 0;
   }
   
   #donateBox>li:first-child {
