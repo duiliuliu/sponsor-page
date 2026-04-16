@@ -19,10 +19,18 @@
 
 打赏一下的话就更好了~
 
-<p align="center">
-  <img src="images/WeChatQR.jpg" width="200" alt="微信支付" style="display:inline-block; margin: 10px;"/>
-  <img src="images/AliPayQR.jpg" width="200" alt="支付宝支付" style="display:inline-block; margin: 10px;"/>
-</p>
+<table>
+  <tr>
+    <td align="center">
+      <img src="images/WeChatQR.jpg" width="180" alt="微信支付">
+      <br>微信支付
+    </td>
+    <td align="center">
+      <img src="images/AliPayQR.jpg" width="180" alt="支付宝支付">
+      <br>支付宝支付
+    </td>
+  </tr>
+</table>
  
 ### 直接 `Fork`
 
