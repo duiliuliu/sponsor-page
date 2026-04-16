@@ -244,7 +244,7 @@
       }
       
       @media screen and (max-width: 200px) {
-        #donateBox {
+        #donateBox:not(.no-text) {
           flex-direction: column;
           min-width: auto;
           width: 100%;
@@ -254,7 +254,7 @@
           margin: 0 auto;
         }
         
-        #donateBox li {
+        #donateBox:not(.no-text) li {
           width: 100%;
           min-width: 44px;
           height: 44px;
@@ -264,22 +264,34 @@
           margin: 1px 0;
         }
         
-        #donateBox>li:first-child {
+        #donateBox:not(.no-text)>li:first-child {
           border-top: none;
           margin-top: 0;
         }
         
-        #donateBox>li:last-child {
+        #donateBox:not(.no-text)>li:last-child {
           margin-bottom: 0;
         }
         
         #donateBox.no-text {
           max-width: 100%;
+          flex-direction: row;
+          min-width: 110px;
+          height: 28px;
         }
         
         #donateBox.no-text li {
+          width: auto;
+          min-width: 27px;
           height: 28px;
           background-size: 20px;
+          border-left: 1px solid #ddd;
+          border-top: none;
+          margin: 0;
+        }
+        
+        #donateBox.no-text>li:first-child {
+          border-left: none;
         }
       }
       
