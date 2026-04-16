@@ -72,19 +72,25 @@ a {
 }
 
 #donateBox {
-  left: calc(50% - 150px);
-  top: calc(50% - 15px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
-  width: 299px;
-  height: 28px;
+  width: auto;
+  min-width: 299px;
+  max-width: 100%;
+  height: auto;
   float: left;
   z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 #donateBox li {
-  width: 74px;
+  flex: 1;
+  min-width: 60px;
   float: left;
   text-align: center;
   border-left: 1px solid #ddd;
@@ -287,4 +293,73 @@ a {
 #QRBox.fadeOut {
   display: block;
   animation: fadeOut 300ms;
+}
+
+/* 响应式设计 - 小屏幕 */
+@media screen and (max-width: 300px) {
+  #donateBox {
+    min-width: 240px;
+    max-width: 100%;
+  }
+  
+  #donateBox li {
+    min-width: 50px;
+    background-size: 35px;
+    height: 40px;
+  }
+  
+  #github {
+    left: calc(50% + 110px);
+  }
+}
+
+@media screen and (max-width: 240px) {
+  #donateBox {
+    min-width: 200px;
+  }
+  
+  #donateBox li {
+    min-width: 45px;
+    background-size: 30px;
+    height: 45px;
+  }
+}
+
+/* 超小屏幕 - 只显示图标 */
+@media screen and (max-width: 200px) {
+  #donateBox {
+    flex-direction: column;
+    min-width: auto;
+    width: 60px;
+  }
+  
+  #donateBox li {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
+    border-left: none;
+    border-top: 1px solid #ddd;
+    background-size: 40px;
+  }
+  
+  #donateBox>li:first-child {
+    border-top: none;
+  }
+  
+  #github {
+    display: none;
+  }
+}
+
+/* 支持嵌入式 iframe 的响应式 */
+html, body {
+  min-width: auto;
+  min-height: auto;
+}
+
+/* 确保在 iframe 中正确显示 */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

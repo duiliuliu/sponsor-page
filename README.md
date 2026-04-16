@@ -16,16 +16,28 @@
 
 ### 更换图片为你自己的打赏图片
 
-### 使用 iframe 嵌入页面的代码，高度至少 240px，宽度至少 310px！
+### 特性
+
+- ✨ 自适应布局，支持各种尺寸嵌入
+- 📱 响应式设计，在宽度过窄时自动调整
+- 🏷️ 超窄宽度（<200px）时垂直堆叠仅展示图标
+- 🎯 完美支持 iframe 嵌入
+
+### 使用 iframe 嵌入页面
 
 ```html
 <iframe
   src="https://duiliuliu.github.io/sponsor-page/"
-  style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:240px; width:100%;"
+  style="border:0 none #fff; min-height:60px; width:100%;"
   frameborder="0"
   scrolling="no"
 ></iframe>
 ```
+
+**推荐最小尺寸**：
+- 常规模式：宽度 300px+，高度 60px+
+- 小屏幕模式：宽度 200px+，高度 50px+
+- 图标模式：宽度 60px，高度 240px+
 
 如果觉得还可以的话，点个赞呗~
 
