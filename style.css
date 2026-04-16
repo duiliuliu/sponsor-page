@@ -334,21 +334,30 @@ a {
   #donateBox {
     flex-direction: column;
     min-width: auto;
-    width: 56px;
+    width: 100%;
+    max-width: 80px;
     height: auto;
+    padding: 5px 0;
+    margin: 0 auto;
   }
   
   #donateBox li {
-    width: 56px;
-    min-width: 56px;
-    height: 56px;
+    width: 100%;
+    min-width: 48px;
+    height: 48px;
     border-left: none;
     border-top: 1px solid #ddd;
-    background-size: 36px;
+    background-size: 32px;
+    margin: 2px 0;
   }
   
   #donateBox>li:first-child {
     border-top: none;
+    margin-top: 0;
+  }
+  
+  #donateBox>li:last-child {
+    margin-bottom: 0;
   }
   
   #github {
