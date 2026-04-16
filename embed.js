@@ -274,12 +274,26 @@
         }
         
         #donateBox.no-text {
-          max-width: 60px;
+          max-width: 100%;
         }
         
         #donateBox.no-text li {
-          height: 40px;
-          background-size: 28px;
+          height: 28px;
+          background-size: 20px;
+        }
+      }
+      
+      /* 超小宽度 - 紧凑模式 */
+      @media screen and (max-width: 150px) {
+        #donateBox.no-text {
+          min-width: 110px;
+          height: 24px;
+        }
+        
+        #donateBox.no-text li {
+          height: 24px;
+          background-size: 18px;
+          min-width: 27px;
         }
       }
       
