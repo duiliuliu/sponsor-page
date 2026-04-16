@@ -63,6 +63,62 @@
 - 小屏幕模式：宽度 200px+，高度 50px+
 - 图标模式：宽度 60px，高度 200px+
 
+### 不展示文字设置
+
+在 iframe URL 中添加 `?no-text=1` 参数即可不展示文字：
+
+```html
+<iframe
+  src="https://duiliuliu.github.io/sponsor-page/?no-text=1"
+  style="border:0 none #fff; min-height:60px; width:100%;"
+  frameborder="0"
+  scrolling="no"
+></iframe>
+```
+
+### 作为组件使用
+
+除了 iframe 嵌入，你也可以将其作为组件直接集成到你的项目中：
+
+#### 1. 下载文件
+- 将 `style.css`、`script.js` 和 `images` 文件夹复制到你的项目中
+
+#### 2. 引入文件
+```html
+<link rel="stylesheet" href="path/to/style.css">
+<script src="path/to/script.js"></script>
+```
+
+#### 3. 添加 HTML 结构
+```html
+<a id="github" href="https://duiliuliu.github.io/sponsor-page/" target="_blank" class="pos-f tr3" title="Github"></a>
+<ul id="donateBox" class="list pos-f tr3">
+  <li id="PayPal">
+    <a href="https://www.paypal.me/duiliuliu" target="_blank">
+      <span class="icon-text">PayPal</span>
+    </a>
+  </li>
+  <li id="QQPay">
+    <span class="icon-text">Ko-fi</span>
+  </li>
+  <li id="AliPay">
+    <span class="icon-text">AliPay</span>
+  </li>
+  <li id="WeChat">
+    <span class="icon-text">WeChat</span>
+  </li>
+</ul>
+<div id="QRBox" class="pos-f left-100">
+  <div id="MainBox"></div>
+</div>
+```
+
+#### 4. 自定义配置
+- 修改图标路径：更新 `style.css` 中的背景图片路径
+- 修改链接地址：更新 HTML 中的 href 属性
+- 隐藏文字：添加 `no-text` 类到 `#donateBox` 元素
+- 自定义样式：根据需要修改 `style.css`
+
 ### 三种模式设置示例
 
 #### 1. 常规模式（默认）

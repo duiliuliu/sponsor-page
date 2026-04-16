@@ -107,6 +107,7 @@ a {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
   opacity: 0.5;
+  position: relative;
 }
 
 #donateBox li:hover {
@@ -122,6 +123,20 @@ a {
 
 #donateBox a {
   display: block;
+}
+
+#donateBox .icon-text {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+#donateBox.no-text .icon-text {
+  display: none;
 }
 
 #donateBox #PayPal {
