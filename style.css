@@ -139,6 +139,55 @@ a {
   display: none;
 }
 
+#donateBox.no-text {
+  height: 40px;
+  min-width: 240px;
+}
+
+#donateBox.no-text li {
+  height: 40px;
+  background-size: 32px;
+  min-width: 60px;
+}
+
+/* 响应式 - 不展示文字时 */
+@media screen and (max-width: 300px) {
+  #donateBox.no-text {
+    height: 36px;
+    min-width: 200px;
+  }
+  
+  #donateBox.no-text li {
+    height: 36px;
+    background-size: 28px;
+    min-width: 50px;
+  }
+}
+
+@media screen and (max-width: 240px) {
+  #donateBox.no-text {
+    height: 32px;
+    min-width: 160px;
+  }
+  
+  #donateBox.no-text li {
+    height: 32px;
+    background-size: 24px;
+    min-width: 40px;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  #donateBox.no-text {
+    max-width: 60px;
+  }
+  
+  #donateBox.no-text li {
+    height: 40px;
+    background-size: 28px;
+  }
+}
+
 #donateBox #PayPal {
   background-image: url(images/PayPal.svg);
 }

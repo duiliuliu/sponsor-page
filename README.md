@@ -46,9 +46,14 @@
 - 📱 响应式设计，在宽度过窄时自动调整
 - 🏷️ 超窄宽度（<200px）时垂直堆叠仅展示图标
 - 🎯 完美支持 iframe 嵌入
+- 📦 支持作为组件直接集成到项目中
+- 🔧 支持不展示文字的紧凑模式
 
-### 使用 iframe 嵌入页面
+## 使用方式
 
+### 1. iframe 嵌入
+
+**基本用法**
 ```html
 <iframe
   src="https://duiliuliu.github.io/sponsor-page/"
@@ -58,15 +63,8 @@
 ></iframe>
 ```
 
-**推荐最小尺寸**：
-- 常规模式：宽度 300px+，高度 60px+
-- 小屏幕模式：宽度 200px+，高度 50px+
-- 图标模式：宽度 60px，高度 200px+
-
-### 不展示文字设置
-
-在 iframe URL 中添加 `?no-text=1` 参数即可不展示文字：
-
+**不展示文字**
+在 URL 中添加 `?no-text=1` 参数：
 ```html
 <iframe
   src="https://duiliuliu.github.io/sponsor-page/?no-text=1"
@@ -76,50 +74,73 @@
 ></iframe>
 ```
 
-### 作为组件使用
+### 2. 作为组件使用
 
-除了 iframe 嵌入，你也可以将其作为组件直接集成到你的项目中：
+#### 2.1 完整集成
+- **下载文件**：将 `style.css`、`script.js` 和 `images` 文件夹复制到你的项目中
+- **引入文件**：
+  ```html
+  <link rel="stylesheet" href="path/to/style.css">
+  <script src="path/to/script.js"></script>
+  ```
+- **添加 HTML 结构**：
+  ```html
+  <a id="github" href="https://duiliuliu.github.io/sponsor-page/" target="_blank" class="pos-f tr3" title="Github"></a>
+  <ul id="donateBox" class="list pos-f tr3">
+    <li id="PayPal">
+      <a href="https://www.paypal.me/duiliuliu" target="_blank">
+        <span class="icon-text">PayPal</span>
+      </a>
+    </li>
+    <li id="QQPay">
+      <span class="icon-text">Ko-fi</span>
+    </li>
+    <li id="AliPay">
+      <span class="icon-text">AliPay</span>
+    </li>
+    <li id="WeChat">
+      <span class="icon-text">WeChat</span>
+    </li>
+  </ul>
+  <div id="QRBox" class="pos-f left-100">
+    <div id="MainBox"></div>
+  </div>
+  ```
 
-#### 1. 下载文件
-- 将 `style.css`、`script.js` 和 `images` 文件夹复制到你的项目中
+#### 2.2 仅 JS 链接引用
 
-#### 2. 引入文件
+**快速集成**
+只需添加一行 JS 代码，即可自动创建打赏组件：
+
 ```html
-<link rel="stylesheet" href="path/to/style.css">
-<script src="path/to/script.js"></script>
+<script src="https://duiliuliu.github.io/sponsor-page/embed.js"></script>
 ```
 
-#### 3. 添加 HTML 结构
+**自定义配置**
 ```html
-<a id="github" href="https://duiliuliu.github.io/sponsor-page/" target="_blank" class="pos-f tr3" title="Github"></a>
-<ul id="donateBox" class="list pos-f tr3">
-  <li id="PayPal">
-    <a href="https://www.paypal.me/duiliuliu" target="_blank">
-      <span class="icon-text">PayPal</span>
-    </a>
-  </li>
-  <li id="QQPay">
-    <span class="icon-text">Ko-fi</span>
-  </li>
-  <li id="AliPay">
-    <span class="icon-text">AliPay</span>
-  </li>
-  <li id="WeChat">
-    <span class="icon-text">WeChat</span>
-  </li>
-</ul>
-<div id="QRBox" class="pos-f left-100">
-  <div id="MainBox"></div>
-</div>
+<script>
+  // 在引入 embed.js 之前设置配置
+  window.PlayingRewardConfig = {
+    position: 'bottom-right', // 位置：bottom-right, bottom-left, top-right, top-left
+    noText: false, // 是否不展示文字
+    githubLink: 'https://duiliuliu.github.io/sponsor-page/', // GitHub 链接
+    paypalLink: 'https://www.paypal.me/duiliuliu', // PayPal 链接
+    kofiLink: 'https://ko-fi.com/E1E81XKC5D', // Ko-fi 链接
+    aliPayQR: 'https://duiliuliu.github.io/sponsor-page/images/AliPayQR.jpg', // 支付宝二维码
+    weChatQR: 'https://duiliuliu.github.io/sponsor-page/images/WeChatQR.jpg' // 微信二维码
+  };
+</script>
+<script src="https://duiliuliu.github.io/sponsor-page/embed.js"></script>
 ```
 
-#### 4. 自定义配置
-- 修改图标路径：更新 `style.css` 中的背景图片路径
-- 修改链接地址：更新 HTML 中的 href 属性
-- 隐藏文字：添加 `no-text` 类到 `#donateBox` 元素
-- 自定义样式：根据需要修改 `style.css`
+## 显示模式
 
-### 三种模式设置示例
+### 推荐尺寸
+- **常规模式**：宽度 300px+，高度 60px+
+- **小屏幕模式**：宽度 200px+，高度 50px+
+- **图标模式**：宽度 60px，高度 200px+
+
+### 模式示例
 
 #### 1. 常规模式（默认）
 适合标准宽度的页面，显示完整图标和文字
@@ -153,3 +174,24 @@
   scrolling="no"
 ></iframe>
 ```
+
+#### 4. 紧凑模式（不展示文字）
+适合需要更紧凑布局的场景
+```html
+<iframe
+  src="https://duiliuliu.github.io/sponsor-page/?no-text=1"
+  style="border:0 none #fff; min-height:48px; width:250px;"
+  frameborder="0"
+  scrolling="no"
+></iframe>
+```
+
+## 自定义配置
+
+- **修改图标路径**：更新 `style.css` 中的背景图片路径
+- **修改链接地址**：更新 HTML 中的 href 属性或配置对象中的链接
+- **隐藏文字**：
+  - iframe 方式：添加 `?no-text=1` 参数
+  - 组件方式：添加 `no-text` 类到 `#donateBox` 元素
+  - JS 引用方式：设置 `noText: true` 配置
+- **自定义样式**：根据需要修改 `style.css`
