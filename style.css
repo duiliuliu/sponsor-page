@@ -128,8 +128,8 @@ a {
   background-image: url(images/PayPal.svg);
 }
 
-#donateBox #QQPay {
-  background-image: url(images/QQPay.svg);
+#donateBox>#QQPay {
+  background-image: url(https://storage.ko-fi.com/cdn/logomarkLogo.png);
 }
 
 
