@@ -81,7 +81,7 @@ a {
   width: auto;
   min-width: 299px;
   max-width: 100%;
-  height: 48px;
+  height: auto;
   float: left;
   z-index: 1;
   display: flex;
@@ -90,24 +90,21 @@ a {
 
 #donateBox li {
   flex: 1;
-  min-width: 70px;
+  min-width: 60px;
   float: left;
   text-align: center;
   border-left: 1px solid #ddd;
   background: no-repeat center center;
   background-color: rgba(204, 217, 220, 0.1);
-  background-size: 36px;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: 45px;
   transition: all .3s;
   cursor: pointer;
   overflow: hidden;
   line-height: 600px;
-  height: 48px;
+  height: 28px;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
   opacity: 0.5;
-  position: relative;
 }
 
 #donateBox li:hover {
@@ -125,89 +122,12 @@ a {
   display: block;
 }
 
-#donateBox .icon-text {
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-#donateBox.no-text .icon-text {
-  display: none;
-}
-
-#donateBox.no-text {
-  height: 36px;
-  min-width: 240px;
-}
-
-#donateBox.no-text li {
-  height: 36px;
-  background-size: 28px;
-  min-width: 60px;
-}
-
-/* 响应式 - 不展示文字时 */
-@media screen and (max-width: 300px) {
-  #donateBox.no-text {
-    height: 32px;
-    min-width: 200px;
-  }
-  
-  #donateBox.no-text li {
-    height: 32px;
-    background-size: 24px;
-    min-width: 50px;
-  }
-}
-
-@media screen and (max-width: 240px) {
-  #donateBox.no-text {
-    height: 28px;
-    min-width: 160px;
-  }
-  
-  #donateBox.no-text li {
-    height: 28px;
-    background-size: 20px;
-    min-width: 40px;
-  }
-}
-
-@media screen and (max-width: 200px) {
-  #donateBox.no-text {
-    max-width: 100%;
-  }
-  
-  #donateBox.no-text li {
-    height: 28px;
-    background-size: 20px;
-  }
-}
-
-/* 超小宽度 - 紧凑模式 */
-@media screen and (max-width: 150px) {
-  #donateBox.no-text {
-    min-width: 110px;
-    height: 24px;
-  }
-  
-  #donateBox.no-text li {
-    height: 24px;
-    background-size: 18px;
-    min-width: 27px;
-  }
-}
-
 #donateBox #PayPal {
   background-image: url(images/PayPal.svg);
 }
 
 #donateBox>#QQPay {
-  background-image: url(images/kofi_logo.svg);
+  background-image: url(https://storage.ko-fi.com/cdn/logomarkLogo.png);
 }
 
 
@@ -227,18 +147,20 @@ a {
   display: none;
   perspective: 400px;
   position: fixed;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  transform: translateZ(0);
 }
 
 #MainBox {
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   text-align: center;
   width: 200px;
   height: 200px;
-  left: calc(50% - 100px);
-  top: calc(50% - 100px);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background: #fff no-repeat center center;
   background-size: 190px;
   border-radius: 6px;
@@ -248,6 +170,7 @@ a {
   transform-style: preserve-3d;
   transform-origin: center center;
   overflow: hidden;
+  z-index: 10000;
 }
 
 #github {
@@ -383,13 +306,12 @@ a {
   #donateBox {
     min-width: 240px;
     max-width: 100%;
-    height: 44px;
   }
   
   #donateBox li {
-    min-width: 58px;
-    background-size: 32px;
-    height: 44px;
+    min-width: 50px;
+    background-size: 35px;
+    height: 40px;
   }
   
   #github {
@@ -400,65 +322,34 @@ a {
 @media screen and (max-width: 240px) {
   #donateBox {
     min-width: 200px;
-    height: 40px;
   }
   
   #donateBox li {
-    min-width: 48px;
-    background-size: 28px;
-    height: 40px;
+    min-width: 45px;
+    background-size: 30px;
+    height: 45px;
   }
 }
 
 /* 超小屏幕 - 只显示图标 */
 @media screen and (max-width: 200px) {
-  #donateBox:not(.no-text) {
+  #donateBox {
     flex-direction: column;
     min-width: auto;
-    width: 100%;
-    max-width: 70px;
-    height: auto;
-    padding: 2px 0;
-    margin: 0 auto;
+    width: 60px;
   }
   
-  #donateBox:not(.no-text) li {
-    width: 100%;
-    min-width: 44px;
-    height: 44px;
+  #donateBox li {
+    width: 60px;
+    min-width: 60px;
+    height: 60px;
     border-left: none;
     border-top: 1px solid #ddd;
-    background-size: 28px;
-    margin: 1px 0;
+    background-size: 40px;
   }
   
-  #donateBox:not(.no-text)>li:first-child {
+  #donateBox>li:first-child {
     border-top: none;
-    margin-top: 0;
-  }
-  
-  #donateBox:not(.no-text)>li:last-child {
-    margin-bottom: 0;
-  }
-  
-  #donateBox.no-text {
-    flex-direction: row;
-    min-width: 110px;
-    height: 28px;
-  }
-  
-  #donateBox.no-text li {
-    width: auto;
-    min-width: 27px;
-    height: 28px;
-    background-size: 20px;
-    border-left: 1px solid #ddd;
-    border-top: none;
-    margin: 0;
-  }
-  
-  #donateBox.no-text>li:first-child {
-    border-left: none;
   }
   
   #github {
