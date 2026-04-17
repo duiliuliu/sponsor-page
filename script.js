@@ -38,7 +38,8 @@ const openQRInNewWindow = (type) => {
 donateBox.addEventListener("click", (e) => {
   let el = e.target;
 
-  if (el.id === "QQPay" || el.closest('#QQPay')) window.open("https://ko-fi.com/E1E81XKC5D", "_blank");
+  if (el.id === "PayPal" || el.closest('#PayPal')) window.open("https://www.paypal.me/duiliuliu", "_blank");
+  else if (el.id === "QQPay" || el.closest('#QQPay')) window.open("https://ko-fi.com/E1E81XKC5D", "_blank");
   else if (el.id === "AliPay" || el.closest('#AliPay')) {
     if (isIframe()) {
       openQRInNewWindow("alipay");
