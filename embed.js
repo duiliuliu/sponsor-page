@@ -56,8 +56,8 @@
       }
       
       #donateBox.no-text {
-        height: 36px;
-        min-width: 240px;
+        height: 24px;
+        min-width: 110px;
       }
       
       #donateBox li {
@@ -83,9 +83,9 @@
       }
       
       #donateBox.no-text li {
-        height: 36px;
-        background-size: 28px;
-        min-width: 60px;
+        height: 24px;
+        background-size: 18px;
+        min-width: 25px;
       }
       
       #donateBox li:hover {
