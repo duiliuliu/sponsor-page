@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>测试iframe中的二维码显示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .toolbar-sponsor {
+            width: 110px;
+            height: 24px;
+            border: 1px dashed #999;
+            margin: 10px 0;
+        }
+        .toolbar-sponsor-iframe {
+            min-width: 100%;
+            min-height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试iframe中的二维码显示</h1>
+    
+    <div class="test-section">
+        <h2>场景1：110px x 24px 容器</h2>
+        <p>这是用户提到的使用场景，点击支付宝或微信图标应该在新窗口打开二维码</p>
+        <div class="toolbar-sponsor">
+            <iframe src="https://duiliuliu.github.io/sponsor-page/?no-text=1" title="Sponsor Page" class="toolbar-sponsor-iframe" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>场景2：本地测试</h2>
+        <div class="toolbar-sponsor">
+            <iframe src="index.html?no-text=1" title="Sponsor Page" class="toolbar-sponsor-iframe" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2>场景3：直接打开完整页面</h2>
+        <a href="index.html" target="_blank">点击这里打开完整页面测试</a>
+    </div>
+</body>
+</html>
